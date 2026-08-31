@@ -1,115 +1,299 @@
-<!DOCTYPE html>
-<html lang="en">
- <head>
-  <meta charset="UTF-8">
-   <meta name="viewport"content="width=devise-width,initial-scale=1.0">
-   <title>Fatma Bakry | My Frist Website </title>
-   <style>
-        * {
-          margin: 0;
-            padding: 0;
-          box-sizing:
-            border-box;
-          scrollor-behavior:
-            smooth;
+<!DOCTYPE html><html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Fatma Bakry | My First Website</title>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        scroll-behavior: smooth;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        background: #0f172a;
+        color: #f8fafc;
+        line-height: 1.6;
+    }
+
+    nav {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background: rgba(15, 23, 42, 0.9);
+        padding: 18px 8%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 1000;
+        backdrop-filter: blur(10px);
+    }
+
+    .logo {
+        font-size: 24px;
+        font-weight: bold;
+    }
+
+    .logo span {
+        color: #a78bfa;
+    }
+
+    nav ul {
+        display: flex;
+        gap: 25px;
+        list-style: none;
+    }
+
+    nav a {
+        color: white;
+        text-decoration: none;
+        transition: 0.3s;
+    }
+
+    nav a:hover {
+        color: #a78bfa;
+    }
+
+    .hero {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 120px 20px 60px;
+        background: linear-gradient(135deg, #0f172a, #312e81);
+    }
+
+    .hero h1 {
+        font-size: clamp(45px, 8vw, 85px);
+        margin-bottom: 15px;
+    }
+
+    .hero h1 span {
+        color: #c4b5fd;
+    }
+
+    .hero p {
+        max-width: 650px;
+        font-size: 20px;
+        color: #cbd5e1;
+        margin-bottom: 30px;
+    }
+
+    .btn {
+        display: inline-block;
+        padding: 13px 28px;
+        background: #8b5cf6;
+        color: white;
+        border-radius: 30px;
+        text-decoration: none;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+
+    .btn:hover {
+        transform: translateY(-4px);
+        background: #7c3aed;
+    }
+
+    section {
+        padding: 90px 8%;
+    }
+
+    .section-title {
+        text-align: center;
+        font-size: 38px;
+        margin-bottom: 45px;
+    }
+
+    .about {
+        max-width: 850px;
+        margin: auto;
+        text-align: center;
+        color: #cbd5e1;
+        font-size: 18px;
+    }
+
+    .cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 25px;
+        max-width: 1000px;
+        margin: auto;
+    }
+
+    .card {
+        background: #1e293b;
+        padding: 30px;
+        border-radius: 18px;
+        text-align: center;
+        border: 1px solid #334155;
+        transition: 0.3s;
+    }
+
+    .card:hover {
+        transform: translateY(-8px);
+        border-color: #8b5cf6;
+    }
+
+    .card h3 {
+        margin-bottom: 10px;
+        color: #c4b5fd;
+    }
+
+    .card p {
+        color: #cbd5e1;
+    }
+
+    .project {
+        max-width: 850px;
+        margin: auto;
+        background: #1e293b;
+        padding: 35px;
+        border-radius: 20px;
+        text-align: center;
+    }
+
+    .project h3 {
+        font-size: 28px;
+        margin-bottom: 12px;
+        color: #c4b5fd;
+    }
+
+    .project p {
+        color: #cbd5e1;
+        margin-bottom: 20px;
+    }
+
+    .contact {
+        text-align: center;
+        background: #111827;
+    }
+
+    .contact p {
+        color: #cbd5e1;
+        margin-bottom: 25px;
+    }
+
+    footer {
+        text-align: center;
+        padding: 25px;
+        background: #020617;
+        color: #94a3b8;
+    }
+
+    @media (max-width: 650px) {
+        nav {
+            padding: 15px 5%;
         }
 
-     body {
-       font-family: Arial, sans-serif;
-       background: #0f172a; 
-       color: #f8fafc;
-       line-height: 1.6;
-     }
+        nav ul {
+            gap: 10px;
+            font-size: 13px;
+        }
 
-     nav {
-       position: fixed;
-       top: 0;
-       width; 100%;
-       background: rgba(15, 23, 42, 0.9);
-       padding: 18px 8%;
-       display: flex;
-       justify-content; 
-       space-between;
-       align-items: center;
-       z-index: 1000;
-       backdrop-filter:
-         blur(10px);
-     }
+        .hero p {
+            font-size: 17px;
+        }
+    }
+</style>
 
-     .logo {
-       font-size: 24px;
-       font-weight: bold;
-     }
+</head><body><nav>
+    <div class="logo">Fatma<span>.</span></div>
 
-     .logo spam {
-       color: #a78bfa;
-     }
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#project">Project</a></li>
+    </ul>
+</nav>
 
-     nav a {
-       color: white;
-       text-decoration:
-         none;
-                transition: 0.3s;
-     }
+<section class="hero" id="home">
+    <h1>Hi, I'm <span>Fatma</span> 👋</h1>
 
-     nav a:hover {
-       color: #a78bfa;
-     }
+    <p>
+        Welcome to my first website.
+        I'm learning programming and building my journey
+        step by step toward the world of technology and AI.
+    </p>
 
-     .hero {
-       min-height: 100vh; 
-       display: flex;
-       flex-direction:
-         column;
-                  justify-content:
-                    center;
-       align-items: center;
-       text-align: center;
-       padding: 120px 20px 60px;
-       background:
-         linear-gradient(135deg, #0f172a, #312e81);
-     }
+    <a href="#about" class="btn">Explore My Journey</a>
+</section>
 
-     .hero h1 {
-       font-size:
-         clamp(45px; 8vw, 85px);
-       margin-bottom: 15px;
-     }
+<section id="about">
+    <h2 class="section-title">About Me</h2>
 
-     .hero h1 span {
-       color: #c4b5fd;
-     }
+    <div class="about">
+        <p>
+            I'm a student who is curious about programming,
+            artificial intelligence and technology.
+            This website is my first step into the world of coding.
+            I may still be learning, but every project is another
+            step toward becoming better.
+        </p>
+    </div>
+</section>
 
-     hero p {
-       max-width: 650px;
-       font-size: 20px;
-       color: #cbd5e1;
-       margin-bottom: 30px;
-     }
+<section id="skills">
+    <h2 class="section-title">What I'm Learning</h2>
 
-     .btn {
-       display:
-         inline-block;
-       padding: 13px 28px;
-       background: #8b5cf6;
-       color: white;
-       border-redius: 30px;
-       text-decoration:
-         none;
-       font-weight: bold;
-       transition: 0.3s;
-     }
+    <div class="cards">
 
-     .btn:hover {
-       transform:
-         translateY(-4px);
-       background: #7c3aed;
-     }
+        <div class="card">
+            <h3>HTML</h3>
+            <p>Building the structure of websites.</p>
+        </div>
 
-     section {
-       padding: 90px 8%;
-     }
+        <div class="card">
+            <h3>CSS</h3>
+            <p>Designing beautiful and responsive pages.</p>
+        </div>
 
-     
-                    </style>
- </head>
+        <div class="card">
+            <h3>Programming</h3>
+            <p>Learning how to think like a programmer.</p>
+        </div>
+
+        <div class="card">
+            <h3>AI</h3>
+            <p>Exploring the exciting world of artificial intelligence.</p>
+        </div>
+
+    </div>
+</section>
+
+<section id="project">
+    <h2 class="section-title">My First Project</h2>
+
+    <div class="project">
+        <h3>My Personal Website 🚀</h3>
+
+        <p>
+            This is my first website created while learning HTML and CSS.
+            It represents the beginning of my programming journey.
+        </p>
+
+        <a href="#home" class="btn">Back to Top</a>
+    </div>
+</section>
+
+<section class="contact">
+    <h2 class="section-title">My Goal</h2>
+
+    <p>
+        Learn. Build. Improve. Repeat. 💜
+    </p>
+
+    <a href="#home" class="btn">Start Again</a>
+</section>
+
+<footer>
+    <p>© 2026 Fatma Bakry | My First Website</p>
+</footer>
+
+</body>
+</html>
